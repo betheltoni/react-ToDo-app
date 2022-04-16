@@ -14,7 +14,7 @@ const TodoCard = (props) => {
      </h3>
 
      <p> {time} 
-     <Link to="/edit">
+     <Link to={'/edit?q=' + {todo}}>
      <FaCheck   style={{color:"green", cursor:"pointer"}} />
      </Link>
      </p>
