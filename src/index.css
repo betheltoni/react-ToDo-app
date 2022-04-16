@@ -55,6 +55,11 @@ body {
   display: block;
   width: 100%;
 }
+.btn-header{
+  background-color: green;
+  margin-left: 200px;
+  padding: 8px;
+}
 
 .task {
   background: #f4f4f4;
@@ -68,6 +73,11 @@ body {
 }
 
 .task h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.task p {
   display: flex;
   align-items: center;
   justify-content: space-between;
