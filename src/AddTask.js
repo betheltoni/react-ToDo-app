@@ -31,7 +31,7 @@ const AddTask = ({addTaskHandler}) => {
         </div>
         <div className='form-control'>
             <label>Time</label>
-            <input type="text" placeholder="Time" value={time} onChange={(e)=>{
+            <input type="time" placeholder="Time" value={time} onChange={(e)=>{
                 setTime(e.target.value)
             }} />
         </div>

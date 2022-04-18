@@ -27,6 +27,7 @@ const EditTask = ({updateTaskHandler}) => {
 
     const [todo, setTodo] = useState("");
     const [time, setTime] = useState("");
+    let id= key;
     
     let navigate = useNavigate();
     console.log(todo,time,key)
@@ -38,7 +39,7 @@ const EditTask = ({updateTaskHandler}) => {
             if(task.id === key){
                 return{
                     ...task,
-                    
+                    id: key,
                     todo: todo,
                     time: time
                 };
@@ -46,7 +47,7 @@ const EditTask = ({updateTaskHandler}) => {
             return task;
         });
         console.log(update)
-        updateTaskHandler({todo,time,})
+        updateTaskHandler({id,todo,time,})
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(update));
         
         navigate("/");
@@ -64,7 +65,7 @@ const EditTask = ({updateTaskHandler}) => {
         </div>
         <div className='form-control'>
             <label>Time</label>
-            <input type="text" placeholder="Time" value={time} onChange={(e) => {
+            <input type="time" placeholder="Time" value={time} onChange={(e) => {
                 setTime(e.target.value)
             }}  />
         </div>

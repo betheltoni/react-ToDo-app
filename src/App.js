@@ -52,8 +52,8 @@ const App = () => {
     const updateTaskHandler = ( updatedTask) => {
     const updatedTaskList = tasks.map((task) => {
       console.log(updatedTask, task);
-      console.log(task.id, updatedTask.id)
-      if(task.id === updatedTask.id){
+      console.log(task.id, Number(updatedTask.id) )
+      if(task.id === Number(updatedTask.id)){
         
         task.todo = updatedTask.todo;
         task.time = updatedTask.time;
