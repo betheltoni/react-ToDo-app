@@ -3,19 +3,21 @@ import { useNavigate } from "react-router";
 
 const AddTask = ({addTaskHandler}) => {
     const [todo, setTodo] = useState("");
-    const [time, setTime] = useState("");
+    const [startTime, setStartTime] = useState("");
+    const [endTime, setEndTime] = useState("");
     
     let navigate = useNavigate();
 
     const add= (e) => {
         e.preventDefault();
-        if (todo === "" || time === ""){
+        if (todo === "" || startTime === "" || endTime === ""){
             alert("All fields are mandatory");
             return;
         }
-        addTaskHandler({todo,time,})
+        addTaskHandler({todo,startTime,endTime})
         setTodo("");
-        setTime("");
+        setStartTime("");
+        setEndTime("");
         
         navigate("/");
         // console.log(todo); 
@@ -30,9 +32,15 @@ const AddTask = ({addTaskHandler}) => {
             }} />
         </div>
         <div className='form-control'>
-            <label>Time</label>
-            <input type="time" placeholder="Time" value={time} onChange={(e)=>{
-                setTime(e.target.value)
+            <label>Start Time</label>
+            <input type="time" placeholder="Start-Time" value={startTime} onChange={(e)=>{
+                setStartTime(e.target.value)
+            }} />
+        </div>
+        <div className='form-control'>
+            <label>End Time</label>
+            <input type="time" placeholder="End-Time" value={endTime} onChange={(e)=>{
+                setEndTime(e.target.value)
             }} />
         </div>
         <button className='btn btn-block'>Save</button>

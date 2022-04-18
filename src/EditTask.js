@@ -26,11 +26,12 @@ const EditTask = ({updateTaskHandler}) => {
     //set time as = currentItem.time
 
     const [todo, setTodo] = useState("");
-    const [time, setTime] = useState("");
+    const [startTime, setStartTime] = useState("");
+    const [endTime, setEndTime] = useState("");
     let id= key;
     
     let navigate = useNavigate();
-    console.log(todo,time,key)
+    console.log(todo,startTime,endTime,key)
 
     const edit= (e) => {
         e.preventDefault();
@@ -41,13 +42,14 @@ const EditTask = ({updateTaskHandler}) => {
                     ...task,
                     id: key,
                     todo: todo,
-                    time: time
+                    startTime: startTime,
+                    endTime: endTime
                 };
             }
             return task;
         });
         console.log(update)
-        updateTaskHandler({id,todo,time,})
+        updateTaskHandler({id,todo,startTime,endTime,})
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(update));
         
         navigate("/");
@@ -64,9 +66,15 @@ const EditTask = ({updateTaskHandler}) => {
             }} />
         </div>
         <div className='form-control'>
-            <label>Time</label>
-            <input type="time" placeholder="Time" value={time} onChange={(e) => {
-                setTime(e.target.value)
+            <label>Start Time</label>
+            <input type="time" placeholder="Start-Time" value={startTime} onChange={(e) => {
+                setStartTime(e.target.value)
+            }}  />
+        </div>
+        <div className='form-control'>
+            <label>End Time</label>
+            <input type="time" placeholder="End-Time" value={endTime} onChange={(e) => {
+                setEndTime(e.target.value)
             }}  />
         </div>
         <button className='btn btn-block'>update</button>

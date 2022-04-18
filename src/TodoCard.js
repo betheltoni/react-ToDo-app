@@ -4,7 +4,7 @@ import { Link,  } from 'react-router-dom'
 
 
 const TodoCard = (props) => {
-    const { id,todo, time, reminder,} = props.tasks
+    const { id,todo, startTime, endTime, reminder,} = props.tasks
 
     
   return (
@@ -14,10 +14,13 @@ const TodoCard = (props) => {
      <FaTimes onClick={()=> props.clickHandler(id)}   style={{color:"red", cursor:"pointer"}} />
      </h3>
 
-     <p> {time} 
+     <p> {startTime} 
      <Link to={'/edit?q=' + id }>
      <FaCheck   style={{color:"green", cursor:"pointer"}} />
      </Link>
+     </p>
+     <p>
+       {endTime}
      </p>
     </div>
   )
