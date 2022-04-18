@@ -23,11 +23,12 @@ const App = () => {
   // ]
     const LOCAL_STORAGE_KEY = "tasks";
     const [tasks, setTasks] = useState([]);
-    
+
+    const id = Math.floor(Math.random()* 1000) +1;
 
     const addTaskHandler =(task)=> {
       // console.log(task);
-      const id = Math.floor(Math.random()* 1000) +1;
+      
 
       const newTask = { id, ...task}
       setTasks([...tasks, newTask])
@@ -48,10 +49,24 @@ const App = () => {
       )
     }
 
-    const updateTaskHandler = (id, updatedTask) => {
-    const updatedTaskList = tasks.map((task) => task.id === id ? updatedTask : task);
+    const updateTaskHandler = ( updatedTask) => {
+    const updatedTaskList = tasks.map((task) => {
+      console.log(updatedTask, task);
+      console.log(task.id, updatedTask.id)
+      if(task.id === updatedTask.id){
+        
+        task.todo = updatedTask.todo;
+        task.time = updatedTask.time;
+        console.log("bethel")
+        
+      }
+      console.log(updatedTask, task);
+      return task;
+
+    })
+  
     const updatedTasks = {id,...updatedTask}
-    setTasks([...tasks, updatedTasks])
+    setTasks(updatedTaskList);
   }
     
     

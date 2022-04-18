@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 const AddTask = ({addTaskHandler}) => {
     const [todo, setTodo] = useState("");
     const [time, setTime] = useState("");
+    
     let navigate = useNavigate();
 
     const add= (e) => {

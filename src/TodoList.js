@@ -5,6 +5,10 @@ import TodoCard from './TodoCard';
 
 const TodoList = (props) => {
     console.log(props);
+    // const thirdEl = props.tasks;
+    // let index = thirdEl.length - 1;
+    // const bbb = (thirdEl[index]["1"])
+    // console.log(bbb)
 
     const deleteTaskHandler = (id) => {
       props.getTaskId(id);
