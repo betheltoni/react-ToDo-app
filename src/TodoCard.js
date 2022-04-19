@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaTimes, FaCheck } from "react-icons/fa"
+import {FaTimes, FaEdit } from "react-icons/fa"
 import { Link,  } from 'react-router-dom'
 
 
@@ -16,7 +16,7 @@ const TodoCard = (props) => {
 
      <p> {startTime} 
      <Link to={'/edit?q=' + id }>
-     <FaCheck   style={{color:"green", cursor:"pointer"}} />
+     <FaEdit   style={{color:"green", cursor:"pointer"}} />
      </Link>
      </p>
      <p>

@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate } from "react-router";
+import { Link } from 'react-router-dom';
 
 const AddTask = ({addTaskHandler}) => {
     const [todo, setTodo] = useState("");
@@ -44,6 +45,9 @@ const AddTask = ({addTaskHandler}) => {
             }} />
         </div>
         <button className='btn btn-block'>Save</button>
+        <Link to="/">
+        <button className='btn btn-block'>Back</button>
+        </Link>
     </form>
   )
 }

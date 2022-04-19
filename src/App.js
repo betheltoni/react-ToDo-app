@@ -56,7 +56,8 @@ const App = () => {
       if(task.id === Number(updatedTask.id)){
         
         task.todo = updatedTask.todo;
-        task.time = updatedTask.time;
+        task.startTime = updatedTask.startTime;
+        task.endTime = updatedTask.endTime;
         console.log("bethel")
         
       }
